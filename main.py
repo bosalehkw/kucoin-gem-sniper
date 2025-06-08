@@ -16,4 +16,8 @@ def check_hlg_volume():
     if vol > 100000:
         send_alert(f"🚨 ضخ سيولة على HLG! الحجم الآن: {vol:.0f}$")
 
-check_hlg_volume()
+import time
+
+while True:
+    check_hlg_volume()
+    time.sleep(60)  # كل دقيقة يعيد التشييك
